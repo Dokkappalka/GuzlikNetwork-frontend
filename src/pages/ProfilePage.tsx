@@ -2,11 +2,9 @@ import { observer } from 'mobx-react-lite'
 import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
 import { Context } from '..'
-import Navigation from '../components/Navigation'
 
 const ProfilePage = () => {
   const { store } = useContext(Context)
-  console.log(store.tariffDate)
   if (!store.isAuth) {
     return <Navigate to='/login' />
   }

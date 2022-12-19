@@ -37,3 +37,5 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+//Дизвйн навигации мог бы быть и лучше...

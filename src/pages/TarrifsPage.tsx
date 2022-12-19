@@ -1,10 +1,39 @@
 import { observer } from 'mobx-react-lite'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { Context } from '..'
 import Modal from '../components/Modal'
+import Tariff from '../components/Tariff'
+
+const tarrifs = [
+  {
+    title: 'Standart',
+    speed: 50,
+    description:
+      'Стандартный тариф. Подходит для социальных сетей, просмотра видео и не только. Не рекомендуется для скачивания объемных файлов.',
+    price: 100,
+    color: 'gray',
+  },
+  {
+    title: 'VIP',
+    speed: 1000,
+    description:
+      'Оптимальный тариф. Высокая скорость интернета и небольшая цена. Рекомендуем!',
+    price: 200,
+    color: 'orange',
+  },
+  {
+    title: 'Premium',
+    speed: 1050,
+    description:
+      'Молниеносная скорость интернета, которой хватит для любых целей!',
+    price: 300,
+    color: 'green',
+  },
+]
 
 const TarrifsPage = () => {
+  const [balanceError, setBalanceError] = useState('')
   const [modalActive, setModalActive] = useState(false)
   const [loading, setLoading] = useState(false)
   const { store } = useContext(Context)
@@ -12,6 +41,10 @@ const TarrifsPage = () => {
     tariff: store.user.tariff,
     price: 0,
   })
+  useEffect(() => {
+    setBalanceError('')
+  }, [modalActive])
+
   if (!store.isAuth) {
     return <Navigate to='/login' />
   }
@@ -53,10 +86,11 @@ const TarrifsPage = () => {
                   await store.updateTariff(choosenTarrif.tariff)
                   setModalActive(false)
                 } else {
-                  setModalActive(false)
+                  setBalanceError('Недостаточно средств!')
                 }
               } catch (error) {
                 console.log(error)
+                return <>Error</>
               } finally {
                 setLoading(false)
               }
@@ -66,67 +100,17 @@ const TarrifsPage = () => {
             {loading ? 'Идёт покупка...' : 'Купить'}
           </button>
         </div>
+        <div className='text-red-500'>{balanceError}</div>
       </Modal>
-      <div className='text-center mx-5 mb-4 bg-gray-50 rounded shadow-md xl:w-[30%] pb-3 '>
-        <h1 className='font-bold text-xl mb-5'>Standart</h1>
-
-        <span className='mb-3 block'>Скорость: 50 Мб/с</span>
-        <span className='text-center block h-[200px] px-3'>
-          Стандартный тариф. Подходит для социальных сетей, просмотра видео и не
-          только. Не рекомендуется для скачивания объемных файлов.
-        </span>
-        <div className='flex justify-between w-auto px-3'>
-          <span className='pt-2'>100 RUB</span>
-          <button
-            className='ml-2 py-2 px-10 bg-gray-200 rounded transition-all hover:bg-blue-100 duration-500 cursor-pointer'
-            onClick={() => {
-              setChoosenTarrif({ tariff: 'Standart', price: 100 })
-              setModalActive(true)
-            }}
-          >
-            Купить
-          </button>
-        </div>
-      </div>
-      <div className='text-center mx-5 mb-4 bg-orange-50 rounded shadow-md xl:w-[30%] pb-3'>
-        <h1 className='font-bold text-xl mb-5'>VIP</h1>
-        <span className='mb-3 block'>Скорость: 1000 Мб/с</span>
-        <span className='text-center block h-[200px] px-3'>
-          Оптимальный тариф. Высокая скорость интернета и небольшая цена.
-          Рекомендуем!
-        </span>
-        <div className='flex justify-between w-auto px-3'>
-          <span className='pt-2'>200 RUB</span>
-          <button
-            onClick={() => {
-              setChoosenTarrif({ tariff: 'VIP', price: 200 })
-              setModalActive(true)
-            }}
-            className='ml-2 py-2 px-10 bg-gray-200 rounded transition-all hover:bg-blue-100 duration-500 cursor-pointer'
-          >
-            Купить
-          </button>
-        </div>
-      </div>
-      <div className='text-center mx-5 bg-green-50 rounded shadow-md xl:w-[30%] pb-3'>
-        <h1 className='font-bold text-xl mb-5'>Premium</h1>
-        <span className='mb-3 block'>Скорость: 1050 Мб/с</span>
-        <span className='text-center block h-[200px] px-3'>
-          Молниеносная скорость интернета, которой хватит для любых целей!
-        </span>
-        <div className='flex justify-between w-auto px-3'>
-          <span className='pt-2'>300 RUB</span>
-          <button
-            onClick={() => {
-              setChoosenTarrif({ tariff: 'Premium', price: 300 })
-              setModalActive(true)
-            }}
-            className='ml-2 py-2 px-10 bg-gray-200 rounded transition-all hover:bg-blue-100 duration-500 cursor-pointer'
-          >
-            Купить
-          </button>
-        </div>
-      </div>
+      {tarrifs.map((tariff) => {
+        return (
+          <Tariff
+            tariffInfo={tariff}
+            setTariff={setChoosenTarrif}
+            setModal={setModalActive}
+          />
+        )
+      })}
     </div>
   )
 }

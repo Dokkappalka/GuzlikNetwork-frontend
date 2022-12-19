@@ -3,18 +3,20 @@ import { Context } from '..'
 
 const DocsPage = () => {
   const { store } = useContext(Context)
+  const docsClasses =
+    'lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'
   return (
     <div
       className={
         store.isAuth && store.user.isActivated
           ? 'h-max lg:ml-[240px] ml-[110px]'
           : 'h-max ml-3'
-      }
+      } //Возможно, это можно реализовать лучше
     >
       <div className='my-5 text-center xl:text-xl font-semibold'>
         Законы и правовые документы.
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             1. Федеральный закон "Об информации, информационных технологиях и о
@@ -22,7 +24,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             2. Федеральный закон "О защите детей от информации, причиняющей вред
@@ -30,21 +32,21 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             3. Федеральный закон "О персональных данных" от 27.07.2006 N 152-ФЗ
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             4. Федеральный закон "О связи" от 07.07.2003 N 126-ФЗ
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             5. Федеральный закон "О внесении изменений в Федеральный закон "Об
@@ -55,7 +57,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             6. Федеральный закон "О внесении изменений в Федеральный закон "О
@@ -64,7 +66,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             7. Федеральный закон "О внесении изменений в отдельные
@@ -74,7 +76,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             8. Федеральный закон "О внесении изменений в Федеральный закон "О
@@ -82,7 +84,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             9. Федеральный закон "О внесении изменений в статью 27 Федерального
@@ -90,7 +92,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             10. Федеральный закон "О внесении изменений в отдельные
@@ -100,7 +102,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             11. Федеральный закон "О внесении изменения в статью 25 Федерального
@@ -108,14 +110,14 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             12. Гражданский кодекс Российской Федерации часть 2 статья 469
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             13. Постановление Правительства Российской Федерации от 31.07.2014 №
@@ -126,7 +128,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             14. Постановление Правительства Российской Федерации от 12.08.2014 №
@@ -135,7 +137,7 @@ const DocsPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={docsClasses}>
         <ol>
           <li className='font-bold pb-2'>
             15. Приказ ФСТЭК России от 18.02.2013 N 21 (ред. от 14.05.2020) "Об

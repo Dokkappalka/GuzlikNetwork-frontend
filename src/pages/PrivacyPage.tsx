@@ -4,13 +4,16 @@ import { Context } from '..'
 
 const PrivacyPage = () => {
   const { store } = useContext(Context)
+  const mainClasses =
+    'lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'
+  const secondaryClasses = 'font-semibold pb-2 pl-4'
   return (
     <div
       className={
         store.isAuth && store.user.isActivated
           ? 'h-max lg:ml-[240px] ml-[110px]'
           : 'h-max ml-3'
-      }
+      } //Возможно, это можно реализовать лучше
     >
       <div className='my-5 text-center xl:text-xl font-semibold'>
         Соглашение об использовании Wi-Fi сети "Guzlik Network"
@@ -25,21 +28,21 @@ const PrivacyPage = () => {
         идентификации является принятием оферты, то есть полным и безоговорочным
         согласием пользователя с условиями настоящего Соглашения.
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-4'>1. Доступ к Услуге</li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             1.1. Для получения доступа к Сети физическому лицу, необходимо
             подключить своё пользовательское (оконечное) оборудование к сети
             беспроводного доступа "Guzlik Network".
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             1.2. Запустить интернет-браузер, предустановленный на
             пользовательском (оконечном) оборудовании, и открыть любую
             интернет-страницу, после этого пользователь будет автоматически
             перенаправлен на страницу регистрации в сети.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             1.3. На странице регистрации ознакомиться с условиями настоящего
             Соглашения и пройти процесс идентификации.
           </li>
@@ -59,39 +62,39 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-4'> 2. Описание Услуги</li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.1. Услуга обеспечивает Пользователям доступ к сети Интернет
             посредством использования сети беспроводного доступа Wi-Fi "Guzlik
             Network" (далее – «Услуга»). Услуга предоставляется только при
             нахождении Пользователя в зоне уверенного приёма радиосигнала точки
             доступа сети "Guzlik Network".
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.2. Услуга предоставляется Пользователям на платной основе на
             условиях настоящего Соглашения.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.3. Доступ к Услуге возможен с использованием мобильных телефонов,
             планшетных персональных компьютеров, ноутбуков и иного оборудования,
             поддерживающего подключение к сети по технологии Wi-Fi. Настройка
             пользовательского (оконечного) оборудования для пользования Услугами
             производится Пользователем самостоятельно.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.4. Услуга предоставляется ежедневно, с 6:00 до 24:00, без
             перерывов, за исключением проведения необходимых профилактических и
             ремонтных работ.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.5. Услуга может предоставляться в стандартах a/b/g/n/ac, на
             частотах 2.4ГГц и 5ГГц. Предоставление услуги в конкретном месте
             зависит от технической возможности Оператора, а также от технических
             возможностей пользовательского (оконечного) оборудования.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.6. Услуга предоставляется со скоростью передачи данных до 2
             Мбит/с. Услуга предоставляется в указанном пределе скоростей, исходя
             из степени интенсивности использования сетевых ресурсов и объёма
@@ -101,27 +104,27 @@ const PrivacyPage = () => {
             (оконечным) оборудованием и сетью связи Оператора и бесперебойность
             доступа к Услуге.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.7. С помощью одного и того же номера мобильного телефона можно
             идентифицировать одно пользовательское (оконечное) устройство.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.8. При использовании Услуги, пользовательскому (оконечному)
             оборудованию присваиваются динамические приватные IP-адреса.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.9. В сети беспроводного доступа "Guzlik Network" для работы
             доступны следующие порты: 20, 21, 22, 53, 80, 81, 443, 989, 990,
             3389, 8008, 8080.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.10. Услуга предоставляется «как есть» («as is») и в том виде, в
             котором она доступна на момент покупки тарифа, при этом никаких
             гарантий, прямых или косвенных, по скорости обмена информацией,
             бесперебойности доступа к Услуге и других, Пользователям не
             предоставляется.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.11. Оператор не ограничивает Пользователя в доступе к любым
             ресурсам сети Интернет (сетям, серверам, хранилищам данных и другим)
             за исключением ресурсов сети Интернет, доступ к которым ограничен в
@@ -130,48 +133,48 @@ const PrivacyPage = () => {
             требованиями иных нормативных актов и (или) решением судебных
             органов.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             2.12. При оказании Услуги Оператор оставляет за собой право на показ
             рекламных, информационных и иных материалов или сообщений по своему
             усмотрению.
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-4'>
             3. При использовании Услуги запрещается:
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.1. Ограничивать доступ других Пользователей или создавать
             препятствия для других Пользователей при пользовании Услугой;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.2. Производить рассылку СПАМа, вредоносных программ (вирусов),
             использование открытых ретрансляторов электронной почты (open
             relays), отправлять рекламные, информационные и другие материалы без
             согласия (или при отсутствии заявки) со стороны адресатов, а также в
             несоответствующие по тематике электронные издания и конференции;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.3. Распространять в сети Интернет порнографические материалы,
             призывы к насилию, свержению власти и другой информации, запрещенной
             для распространения на территории РФ;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.4. Нарушать правила использования любых ресурсов сети Интернет,
             установленные Оператором и/или владельцами этих ресурсов, и/или
             наносить какой-либо ущерб ресурсам Оператора, пользователям Интернет
             и других сетей, к которым возможен доступ через Интернет;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.5. Производить самовольное (несанкционированное) проникновение в
             любые технологические компоненты (узлы), программы, базы данных и
             иные составляющие элементы сети Оператора, а равно производить любые
             иные действия, способные нанести вред Оператору, владельцам ресурсов
             в сети Интернет и/или пользователям сети Интернет;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.6. Посылать, передавать, воспроизводить, предоставлять или в любом
             виде использовать в коммерческих целях информацию, программное
             обеспечение, или другие материалы, полностью или частично,
@@ -179,53 +182,53 @@ const PrivacyPage = () => {
             иными интеллектуальными правами, без согласия правообладателя /
             автора/ поставщика информации/ уполномоченного представителя;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.7. Использовать программное обеспечение, производящее
             автоматическую идентификацию Пользователя в целях получения доступа
             к Услуге;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.8. Передавать учетные данные для работы в сети беспроводного
             доступа "Guzlik Network" третьим лицам.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.9. Использовать пользовательское (оконечное) оборудование в
             качестве прокси-серверов, роутеров и т.п. для каких-либо других
             подключенных через них компьютеров, подсетей и т.п.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             3.10. Совершать иные действия, не указанные выше и противоречащие
             общепринятым нормам использования ресурсов сети Интернет или
             создающие угрозу целостности сети связи Оператора.
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-4'>
             4. Оператор не несёт ответственности за:
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             4.1. Прямой или косвенный ущерб, причиненный Пользователю в
             результате использования или невозможности использования Услуги;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             4.2. Любые затраты или ущерб, прямо или косвенно возникшие в
             результате получения Пользователем информации и услуг через сеть
             Интернет посредством Услуги;
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             4.3. Функционирование и доступность отдельных сегментов сети
             Интернет.
           </li>
-          <li className='font-semibold pb-2 pl-4'>
+          <li className={secondaryClasses}>
             4.4. Оператор не несёт ответственности за нарушение законодательства
             Российской Федерации, исключительных и иных прав и законных
             интересов третьих лиц во время использования Услуги.
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             5. Оператор вправе вести учет подключений к сети и сетевого трафика
@@ -233,7 +236,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             6. Оператор вправе в любой момент без предварительного
@@ -243,7 +246,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             7. В случае возникновения проблем при работе в сети беспроводного
@@ -252,7 +255,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             8. Настоящее Соглашение вступает в силу с даты его публикации по
@@ -260,7 +263,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             9. Оператор в праве забрать ваше тело и распоряжаться им на свое
@@ -268,7 +271,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             10. Пользователь обязуется в обязательном порядке передать душу в
@@ -277,7 +280,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-2'>
             11. Оператор вправе в одностороннем порядке внести любые
@@ -290,7 +293,7 @@ const PrivacyPage = () => {
           </li>
         </ol>
       </div>
-      <div className='lg:mx-[60px] lg:px-[60px] px-[10px] mr-2 py-3 mt-3 bg-gray-50 rounded shadow-md border'>
+      <div className={mainClasses}>
         <ol>
           <li className='font-bold pb-4'>
             Wi-Fi сеть " Guzlik Network " предназначена для обеспечения доступа

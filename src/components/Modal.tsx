@@ -3,8 +3,8 @@ import classes from './Modal.module.css'
 
 interface PropsTypes {
   active: boolean
-  setActive: any
-  children: any
+  setActive: (bol: boolean) => void
+  children: React.ReactNode
 }
 
 const Modal = ({ active, setActive, children }: PropsTypes) => {
